@@ -1,0 +1,9 @@
+User-agent: *
+allow: /
+
+Sitemap: https://localbeings.com/pages-sitemap.xml
+Sitemap: https://localbeings.com/categories-sitemap.xml
+Sitemap: https://localbeings.com/landingpages-sitemap.xml
+Sitemap: https://localbeings.com/listings-sitemap.xml
+Sitemap: https://localbeings.com/articles-sitemap.xml
+Sitemap: https://localbeings.com/images_sitemap.xml
