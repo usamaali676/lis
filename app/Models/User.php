@@ -8,6 +8,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Role;
+use Carbon\CarbonInterface;
+use SimpleStatsIo\LaravelClient\Contracts\TrackablePerson;
+use SimpleStatsIo\LaravelClient\Contracts\TrackablePersonWithCondition;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -29,6 +32,22 @@ class User extends Authenticatable implements MustVerifyEmail
     public function roles()
     {
         return $this->belongsTo(Role::class, 'role_id');
+    }
+    public function passTrackingCondition(): bool
+    {
+        return $this->email_verified_at != NULL;
+    }
+
+    /**
+     * The field(s) we should watch for changes to recheck the condition.
+     */
+    public function watchTrackingFields(): array
+    {
+        return ['email_verified_at'];
+    }
+    public function getTrackingTime(): CarbonInterface
+    {
+        return $this->created_at;
     }
     /**
      * The attributes that should be hidden for serialization.

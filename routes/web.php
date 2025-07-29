@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnalyticsController;
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BusinessCategoriesController;
@@ -69,7 +70,9 @@ Route::get('/alllp', [LandingPageController::class, 'getLandingPagesBySlugs'])->
 Auth::routes([
     'verify' => true,
 ]);
+
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth','verified');
+Route::get('/admin/analytics', [AnalyticsController::class, 'index'])->name('analytics.dashboard');
 
 Route::controller(BusinessCategoriesController::class)->prefix('bcategory')->as('bc.')->middleware('auth','PermissionMiddleware', 'verified')->group(function(){
 Route::get('/index',  'index')->name('index');

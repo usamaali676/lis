@@ -17,6 +17,17 @@
       0 => 'Fruitcake\\Cors\\CorsServiceProvider',
     ),
   ),
+  'hisorange/browser-detect' => 
+  array (
+    'aliases' => 
+    array (
+      'Browser' => 'hisorange\\BrowserDetect\\Facade',
+    ),
+    'providers' => 
+    array (
+      0 => 'hisorange\\BrowserDetect\\ServiceProvider',
+    ),
+  ),
   'intervention/image' => 
   array (
     'aliases' => 
@@ -79,6 +90,17 @@
     'aliases' => 
     array (
       'Alert' => 'RealRashid\\SweetAlert\\Facades\\Alert',
+    ),
+  ),
+  'simplestats-io/laravel-client' => 
+  array (
+    'aliases' => 
+    array (
+      'SimplestatsClient' => 'SimpleStatsIo\\LaravelClient\\Facades\\SimplestatsClient',
+    ),
+    'providers' => 
+    array (
+      0 => 'SimpleStatsIo\\LaravelClient\\SimplestatsClientServiceProvider',
     ),
   ),
   'spatie/laravel-sitemap' => 
