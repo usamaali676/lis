@@ -6,534 +6,483 @@
  <meta name="keywords" content="Local Business Listing, US Business Directory">
  <meta name="publisher" content="Local Beings">
   <link rel="canonical" href="https://localbeings.com"/>
+
 @endsection
 @section('front')
 
-<div class="home-banner margin-bottom-0"  fetchpriority="high" style="background:#f41b3b url(asset/img/banner-6.webp) no-repeat;" data-overlay="5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12">
-
-                <div class="banner_caption text-center mb-5">
-                    <h1 class="banner_title ft-bold mb-1">Find Best Businesses in Your Areas</h1>
-                    <p class="fs-md ft-medium">Your one-stop platform to explore and connect with local businesses of all sizes.</p>
+<div class="search_container_block home_main_search_part main_search_block" data-background-image="images/city_search_background.jpg">
+    <div class="main_inner_search_block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Find Your Nearby <span class="typed-words"></span></h2>
+                    <h4>Find some of the best tips from around the city from our partners and friends.</h4>
+                    <div class="main_input_search_part">
+                        <div class="main_input_search_part_item">
+                            <input type="text" placeholder="What are you looking for?" value="" />
+                        </div>
+                        <div class="main_input_search_part_item intro-search-field">
+                            <select class="selectpicker default" data-live-search="true" data-selected-text-format="count" data-size="5" title="Select Location">
+            <option>Afghanistan</option>
+            <option>Albania</option>
+            <option>Algeria</option>
+            <option>Brazil</option>
+            <option>Burundi</option>
+            <option>Bulgaria</option>
+            <option>Germany</option>
+            <option>Grenada</option>
+            <option>Guatemala</option>
+            <option>Iceland</option>
+          </select>
+                        </div>
+                        <div class="main_input_search_part_item intro-search-field">
+                                <span class="search-tag"><i class="lni lni-briefcase"></i></span>
+                                <select class="form-control electpicker default" name="category" data-live-search="true" data-selected-text-format="count" data-size="5" title="Select Location">
+                                    <option value="">Choose Category</option>
+                                    @foreach ($bcat as $cat)
+                                        <option value="{{$cat->name}}">{{$cat->name}}</option>
+                                    @endforeach
+                                </select>
+                        </div>
+                        <button class="button" onclick="window.location.">Search</button>
+                    </div>
+                    <div class="main_popular_categories">
+                        <h3>Or Browse Popular Categories</h3>
+                        <ul class="main_popular_categories_list">
+                            @foreach ($famcat as $list)
+                            <li>
+                                <a href="{{route('singcat', $list->slug)}}">
+                                    <div class="utf_box"> <i class="{{$list->icon}}" aria-hidden="true"></i>
+                                        <p>{{$list->slug}}</p>
+                                    </div>
+                                </a>
+                            </li>
+                            @endforeach
+                            {{-- <li>
+                                <a href="#">
+                                    <div class="utf_box"> <i class="im im-icon-Dumbbell" aria-hidden="true"></i>
+                                        <p>Fitness</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="utf_box"> <i class="im im-icon-Electric-Guitar" aria-hidden="true"></i>
+                                        <p>Events</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="utf_box"> <i class="im im-icon-Hotel" aria-hidden="true"></i>
+                                        <p>Hotels</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="utf_box"> <i class="im im-icon-Home-2" aria-hidden="true"></i>
+                                        <p>Real Estate</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="utf_box"> <i class="im im-icon-Business-Man" aria-hidden="true"></i>
+                                        <p>Business</p>
+                                    </div>
+                                </a>
+                            </li> --}}
+                        </ul>
+                    </div>
                 </div>
-
-                <div class="Goodup-top-cates">
-                    <ul>
-                        @foreach ($famcat as $list)
-                        
-                        <li><a href="{{route('singcat', $list->slug)}}" class="Goodup-top-cat-box"><div class="Goodup-tp-ico"><i class="{{$list->icon}}"></i></div><div class="Goodup-tp-title"><h5>{{$list->slug}}</h5></div></a></li>
-                        @endforeach
-                    </ul>
-                </div>
-
             </div>
         </div>
     </div>
 </div>
-<!-- ======================= Home Banner ======================== -->
 
-<!-- ======================= Home Search ======================== -->
-<section class="p-0">
+<div class="container padding-bottom-70">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="headline_part centered margin-bottom-35 margin-top-70">Most Popular Cities/Towns <span>Discover best things to do restaurants, shopping, hotels, cafes and places<br>around the world by categories.</span></h3>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <a href="listings_list_with_sidebar.html" class="img-box" data-background-image="images/popular-location-01.jpg">
+                <div class="utf_img_content_box visible">
+                    <h4>Nightlife </h4>
+                    <span>18 Listings</span>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <a href="listings_list_with_sidebar.html" class="img-box" data-background-image="images/popular-location-02.jpg">
+                <div class="utf_img_content_box visible">
+                    <h4>Shops</h4>
+                    <span>24 Listings</span>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <a href="listings_list_with_sidebar.html" class="img-box" data-background-image="images/popular-location-03.jpg">
+                <div class="utf_img_content_box visible">
+                    <h4>Restaurant</h4>
+                    <span>17 Listings</span>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <a href="listings_list_with_sidebar.html" class="img-box" data-background-image="images/popular-location-04.jpg">
+                <div class="utf_img_content_box visible">
+                    <h4>Outdoor Activities</h4>
+                    <span>12 Listings</span>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <a href="listings_list_with_sidebar.html" class="img-box" data-background-image="images/popular-location-05.jpg">
+                <div class="utf_img_content_box visible">
+                    <h4>Hotels</h4>
+                    <span>14 Listings</span>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <a href="listings_list_with_sidebar.html" class="img-box" data-background-image="images/popular-location-06.jpg">
+                <div class="utf_img_content_box visible">
+                    <h4>New York</h4>
+                    <span>9 Listings</span>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-12 centered_content"> <a href="#" class="button border margin-top-20">View More Categories</a> </div>
+    </div>
+</div>
+
+<section class="fullwidth_block padding-top-75 padding-bottom-70" data-background-color="#f9f9f9">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-11 col-lg-12 col-md-12 col-12">
+        <div class="row slick_carousel_slider">
+            <div class="col-md-12">
+                <h3 class="headline_part centered margin-bottom-45"> Most Visited Places <span>Explore the greates places in the city</span> </h3>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="simple_slick_carousel_block utf_dots_nav">
+                        <div class="utf_carousel_item">
+                            <a href="listings_single_page_1.html" class="utf_listing_item-container compact">
+                                <div class="utf_listing_item"> <img src="images/utf_listing_item-01.jpg" alt=""> <span class="tag"><i class="im im-icon-Chef-Hat"></i> Restaurant</span> <span class="featured_tag">Featured</span>
+                                    <span class="utf_open_now">Open Now</span>
+                                    <div class="utf_listing_item_content">
+                                        <div class="utf_listing_prige_block">
+                                            <span class="utf_meta_listing_price"><i class="fa fa-tag"></i> $25 - $55</span>
+                                            <span class="utp_approve_item"><i class="utf_approve_listing"></i></span>
+                                        </div>
+                                        <h3>Chontaduro Barcelona</h3>
+                                        <span><i class="fa fa-map-marker"></i> The Ritz-Carlton, Hong Kong</span>
+                                        <span><i class="fa fa-phone"></i> (+15) 124-796-3633</span>
+                                    </div>
+                                </div>
+                                <div class="utf_star_rating_section" data-rating="4.5">
+                                    <div class="utf_counter_star_rating">(4.5)</div>
+                                    <span class="utf_view_count"><i class="fa fa-eye"></i> 822+</span>
+                                    <span class="like-icon"></span>
+                                </div>
+                            </a>
+                        </div>
 
-                <div class="Goodup-search-shadow">
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="placesseach" role="tabpanel" aria-labelledby="placesseach-tab">
-                            <form action="{{route('search')}}" method="GET" class="main-search-wrap fl-wrap">
-                                <div class="main-search-item">
-                                    <span class="search-tag"><i class="lni lni-keyboard"></i></span>
-                                    <input type="text" name="search" class="form-control radius" placeholder="What are you looking for?" />
+                        <div class="utf_carousel_item">
+                            <a href="listings_single_page_1.html" class="utf_listing_item-container compact">
+                                <div class="utf_listing_item"> <img src="images/utf_listing_item-02.jpg" alt=""> <span class="tag"><i class="im im-icon-Electric-Guitar"></i> Events</span>
+                                    <div class="utf_listing_item_content">
+                                        <div class="utf_listing_prige_block">
+                                            <span class="utf_meta_listing_price"><i class="fa fa-tag"></i> $45 - $70</span>
+                                        </div>
+                                        <h3>The Lounge & Bar</h3>
+                                        <span><i class="fa fa-map-marker"></i> The Ritz-Carlton, Hong Kong</span>
+                                        <span><i class="fa fa-phone"></i> (+15) 124-796-3633</span>
+                                    </div>
                                 </div>
-                                <div class="main-search-item">
-                                    <span class="search-tag"><i class="lni lni-map-marker"></i></span>
-                                    <input type="text" name="location" class="form-control" placeholder="Location" />
+                                <div class="utf_star_rating_section" data-rating="4.5">
+                                    <div class="utf_counter_star_rating">(4.5)</div>
+                                    <span class="utf_view_count"><i class="fa fa-eye"></i> 822+</span>
+                                    <span class="like-icon"></span>
                                 </div>
-                                <!--<div class="main-search-item">-->
-                                <!--    <span class="search-tag"><i class="lni lni-briefcase"></i></span>-->
-                                <!--    <select class="form-control" name="category">-->
-                                <!--        <option value="">Choose Category</option>-->
-                                <!--        @foreach ($bcat as $cat)-->
-                                <!--            <option value="{{$cat->name}}">{{$cat->name}}</option>-->
-                                <!--        @endforeach-->
-                                <!--    </select>-->
-                                <!--</div>-->
-                                <div class="main-search-button">
-                                    <button  type="submit" class="btn full-width theme-bg text-white" type="button">Search</button>
+                            </a>
+                        </div>
+
+                        <div class="utf_carousel_item">
+                            <a href="listings_single_page_1.html" class="utf_listing_item-container compact">
+                                <div class="utf_listing_item"> <img src="images/utf_listing_item-03.jpg" alt=""> <span class="tag"><i class="im im-icon-Hotel"></i> Hotels</span>
+                                    <span class="utf_closed">Closed</span>
+                                    <div class="utf_listing_item_content">
+                                        <div class="utf_listing_prige_block">
+                                            <span class="utf_meta_listing_price"><i class="fa fa-tag"></i> $25 - $55</span>
+                                        </div>
+                                        <h3>Westfield Sydney</h3>
+                                        <span><i class="fa fa-map-marker"></i> The Ritz-Carlton, Hong Kong</span>
+                                        <span><i class="fa fa-phone"></i> (+15) 124-796-3633</span>
+                                    </div>
                                 </div>
+                                <div class="utf_star_rating_section" data-rating="4.5">
+                                    <div class="utf_counter_star_rating">(4.5)</div>
+                                    <span class="utf_view_count"><i class="fa fa-eye"></i> 822+</span>
+                                    <span class="like-icon"></span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="utf_carousel_item">
+                            <a href="listings_single_page_1.html" class="utf_listing_item-container compact">
+                                <div class="utf_listing_item"> <img src="images/utf_listing_item-04.jpg" alt=""> <span class="tag"><i class="im im-icon-Dumbbell"></i> Fitness</span>
+                                    <div class="utf_listing_item_content">
+                                        <div class="utf_listing_prige_block">
+                                            <span class="utf_meta_listing_price"><i class="fa fa-tag"></i> $45 - $70</span>
+                                            <span class="utp_approve_item"><i class="utf_approve_listing"></i></span>
+                                        </div>
+                                        <h3>Ruby Beauty Center</h3>
+                                        <span><i class="fa fa-map-marker"></i> The Ritz-Carlton, Hong Kong</span>
+                                        <span><i class="fa fa-phone"></i> (+15) 124-796-3633</span>
+                                    </div>
+                                </div>
+                                <div class="utf_star_rating_section" data-rating="4.5">
+                                    <div class="utf_counter_star_rating">(4.5)</div>
+                                    <span class="utf_view_count"><i class="fa fa-eye"></i> 822+</span>
+                                    <span class="like-icon"></span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="utf_carousel_item">
+                            <a href="listings_single_page_1.html" class="utf_listing_item-container compact">
+                                <div class="utf_listing_item"> <img src="images/utf_listing_item-05.jpg" alt=""> <span class="tag"><i class="im im-icon-Hotel"></i> Hotels</span> <span class="featured_tag">Featured</span>
+                                    <span class="utf_closed">Closed</span>
+                                    <div class="utf_listing_item_content">
+                                        <div class="utf_listing_prige_block">
+                                            <span class="utf_meta_listing_price"><i class="fa fa-tag"></i> $45 - $70</span>
+                                        </div>
+                                        <h3>UK Fitness Club</h3>
+                                        <span><i class="fa fa-map-marker"></i> The Ritz-Carlton, Hong Kong</span>
+                                        <span><i class="fa fa-phone"></i> (+15) 124-796-3633</span>
+                                    </div>
+                                </div>
+                                <div class="utf_star_rating_section" data-rating="4.5">
+                                    <div class="utf_counter_star_rating">(4.5)</div>
+                                    <span class="utf_view_count"><i class="fa fa-eye"></i> 822+</span>
+                                    <span class="like-icon"></span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="utf_carousel_item">
+                            <a href="listings_single_page_1.html" class="utf_listing_item-container compact">
+                                <div class="utf_listing_item"> <img src="images/utf_listing_item-06.jpg" alt=""> <span class="tag"><i class="im im-icon-Chef-Hat"></i> Restaurant</span>
+                                    <span class="utf_open_now">Open Now</span>
+                                    <div class="utf_listing_item_content">
+                                        <div class="utf_listing_prige_block">
+                                            <span class="utf_meta_listing_price"><i class="fa fa-tag"></i> $25 - $45</span>
+                                            <span class="utp_approve_item"><i class="utf_approve_listing"></i></span>
+                                        </div>
+                                        <h3>Fairmont Pacific Rim</h3>
+                                        <span><i class="fa fa-map-marker"></i> The Ritz-Carlton, Hong Kong</span>
+                                        <span><i class="fa fa-phone"></i> (+15) 124-796-3633</span>
+                                    </div>
+                                </div>
+                                <div class="utf_star_rating_section" data-rating="4.5">
+                                    <div class="utf_counter_star_rating">(4.5)</div>
+                                    <span class="utf_view_count"><i class="fa fa-eye"></i> 822+</span>
+                                    <span class="like-icon"></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<a href="listings_grid_full_width.html" class="flip-banner parallax" data-background="images/slider-bg-02.jpg" data-color="#000" data-color-opacity="0.85" data-img-width="2500" data-img-height="1666">
+    <div class="flip-banner-content">
+        <h2 class="flip-visible">Browse Listings Attractions List</h2>
+    </div>
+</a>
+
+<section class="utf_testimonial_part fullwidth_block padding-top-75 padding-bottom-75">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 class="headline_part centered">What Say Our Customers <span class="margin-top-15">Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the industry's standard dummy text ever since...</span> </h3>
+            </div>
+        </div>
+    </div>
+    <div class="fullwidth_carousel_container_block margin-top-20">
+        <div class="utf_testimonial_carousel testimonials">
+            <div class="utf_carousel_review_part">
+                <div class="utf_testimonial_box">
+                    <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam
+                        erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.</div>
+                </div>
+                <div class="utf_testimonial_author"> <img src="images/happy-client-01.jpg" alt="">
+                    <h4>Denwen Evil <span>Web Developer</span></h4>
+                </div>
+            </div>
+            <div class="utf_carousel_review_part">
+                <div class="utf_testimonial_box">
+                    <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam
+                        erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.</div>
+                </div>
+                <div class="utf_testimonial_author"> <img src="images/happy-client-02.jpg" alt="">
+                    <h4>Adam Alloriam <span>Web Developer</span></h4>
+                </div>
+            </div>
+            <div class="utf_carousel_review_part">
+                <div class="utf_testimonial_box">
+                    <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam
+                        erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.</div>
+                </div>
+                <div class="utf_testimonial_author"> <img src="images/happy-client-03.jpg" alt="">
+                    <h4>Illa Millia <span>Project Manager</span></h4>
+                </div>
+            </div>
+            <div class="utf_carousel_review_part">
+                <div class="utf_testimonial_box">
+                    <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam
+                        erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.</div>
+                </div>
+                <div class="utf_testimonial_author"> <img src="images/happy-client-01.jpg" alt="">
+                    <h4>Denwen Evil <span>Web Developer</span></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="fullwidth_block padding-top-75 padding-bottom-75" data-background-color="#ffffff">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="headline_part centered margin-bottom-50"> Letest Tips & Blog<span>Discover & connect with top-rated local businesses</span></h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <a href="blog_detail_left_sidebar.html" class="blog_compact_part-container">
+                    <div class="blog_compact_part"> <img src="images/blog-compact-post-01.jpg" alt="">
+                        <div class="blog_compact_part_content">
+                            <h3>The Most Popular New top Places Listing</h3>
+                            <ul class="blog_post_tag_part">
+                                <li>22 January 2022</li>
+                            </ul>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <a href="blog_detail_left_sidebar.html" class="blog_compact_part-container">
+                    <div class="blog_compact_part"> <img src="images/blog-compact-post-02.jpg" alt="">
+                        <div class="blog_compact_part_content">
+                            <h3>Greatest Event Places in Listing</h3>
+                            <ul class="blog_post_tag_part">
+                                <li>18 January 2022</li>
+                            </ul>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <a href="blog_detail_left_sidebar.html" class="blog_compact_part-container">
+                    <div class="blog_compact_part"> <img src="images/blog-compact-post-03.jpg" alt="">
+                        <div class="blog_compact_part_content">
+                            <h3>Top 15 Greatest Ideas for Health & Body</h3>
+                            <ul class="blog_post_tag_part">
+                                <li>10 January 2022</li>
+                            </ul>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <a href="blog_detail_left_sidebar.html" class="blog_compact_part-container">
+                    <div class="blog_compact_part"> <img src="images/blog-compact-post-04.jpg" alt="">
+                        <div class="blog_compact_part_content">
+                            <h3>Top 10 Best Clothing Shops in Sydney</h3>
+                            <ul class="blog_post_tag_part">
+                                <li>18 January 2022</li>
+                            </ul>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-12 centered_content"> <a href="blog_page.html" class="button border margin-top-20">View More Blog</a> </div>
+        </div>
+    </div>
+</section>
+
+<section class="fullwidth_block margin-bottom-0 padding-top-50 padding-bottom-50" data-background-color="linear-gradient(to bottom, #f9f9f9 0%, rgba(255, 255, 255, 1))">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="companie-logo-slick-carousel utf_dots_nav">
+                    <div class="item">
+                        <img src="images/brand_logo_01.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="images/brand_logo_02.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="images/brand_logo_03.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="images/brand_logo_04.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="images/brand_logo_05.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="images/brand_logo_06.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="images/brand_logo_07.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="utf_cta_area_item utf_cta_area2_block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="utf_subscribe_block clearfix">
+                    <div class="col-md-8 col-sm-7">
+                        <div class="section-heading">
+                            <h2 class="utf_sec_title_item utf_sec_title_item2">Subscribe to Newsletter!</h2>
+                            <p class="utf_sec_meta">
+                                Subscribe to get latest updates and information.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-5">
+                        <div class="contact-form-action">
+                            <form method="post">
+                                <span class="la la-envelope-o"></span>
+                                <input class="form-control" type="email" placeholder="Enter your email" required="">
+                                <button class="utf_theme_btn" type="submit">Subscribe</button>
                             </form>
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </section>
-<!-- ======================= Home Search End ======================== -->
-
-
-			<!-- =========================== Listing Category ======================= -->
-			@if($states->count() >= 1)
-			<section class="gray middle min">
-				<div class="container">
-
-					<div class="row">
-						<div class="col-xl-12 col-lg-12 col-md-12 col-12">
-							<div class="sec_title position-relative text-center mb-5">
-								<h6 class="text-muted mb-0">Top Areas</h6>
-								<h2 class="ft-bold">Find the Best Businesses in Town</h2>
-							</div>
-						</div>
-					</div>
-
-					<div class="row align-items-center">
-
-                        @foreach ($states as $item)
-						<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
-							<div class="Goodup-img-catg-wrap">
-								<div class="Goodup-catg-city">{{$item->cities_count}} Cities</div>
-								<div class="Goodup-img-catg-thumb"><a href="{{route('cities')}}/{{$item->slug}}"><img src="{{asset('/business/states')}}/{{$item->image}}" class="img-fluid" alt="" style="width: 304px; height: 200px"></a></div>
-								<div class="Goodup-img-catg-caption">
-									<h4 class="fs-md mb-0 ft-medium m-catrio">{{$item->name}} </h4>
-									<a href="{{route('cities')}}/{{$item->slug}}" class="Goodup-cat-arrow"><i class="lni lni-arrow-right-circle"></i></a>
-								</div>
-							</div>
-						</div>
-                        @endforeach
-					</div>
-
-				</div>
-			</section>
-			@endif
-			<!-- =========================== Listing Category End ===================== -->
-
-
-    <!-- ======================= All Types Listing ======================== -->
-    @if($business->count() >= 1)
-    <section class="space min">
-        <div class="container">
-    
-            <div class="row justify-content-center">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                    <div class="sec_title position-relative text-center mb-5">
-                        <h6 class="theme-cl mb-0">Featured Listings</h6>
-                        <h2 class="ft-bold">Top Services Provider</h2>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- row -->
-            <div class="row align-items-center">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <div class="tab-content" id="myTabsContent">
-    
-                        <!-- Places -->
-                        <div class="tab-pane fade show active" id="places" role="tabpanel" aria-labelledby="places-tab">
-                            <div class="row justify-content-center">
-                                @foreach ($business as $item)
-                                    <!-- Single -->
-                                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                                        <div class="Goodup-grid-wrap">
-                                            <div class="Goodup-grid-upper">
-                                                <div class="Goodup-pos ab-left">
-                                                    @foreach ($item->cat as $list)
-                                                    <div class="Goodup-featured-tag">{{$list->name}}</div>
-                                                    @endforeach
-    
-                                                </div>
-                                                <div class="Goodup-grid-thumb">
-                                                    <a href="{{route('business.single')}}/{{$item->slug}}" class="d-block text-center m-auto"><img
-                                                            src="{{asset('business/feature')}}/{{$item->featureImage}}" class="img-fluid" alt="" style="width: 360px; height: 200px"></a>
-                                                </div>
-                                                {{-- <div class="Goodup-rating overlay">
-                                                    <div class="Goodup-pr-average high">4.8</div>
-                                                    <div class="Goodup-aldeio">
-                                                        <div class="Goodup-rates">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                        </div>
-                                                        <div class="Goodup-all-review"><span>46 Reviews</span></div>
-                                                    </div>
-                                                </div> --}}
-                                            </div>
-                                            <div class="Goodup-grid-fl-wrap">
-                                                <div class="Goodup-caption px-3 py-2">
-                                                    <div class="Goodup-author"><a href="{{route('business.single')}}/{{$item->slug}}"><img src="{{asset('business/logo')}}/{{$item->logo}}"
-                                                                class="img-fluid circle" alt="" style="width: 67px; height: 23px;"></a></div>
-                                                    <h4 class="mb-0 ft-medium medium"><a href="{{route('business.single')}}/{{$item->slug}}" class="text-dark fs-md">{{$item->name}}</a></h4>
-                                                    <div class="Goodup-location"><i class="fas fa-map-marker-alt me-1 theme-cl"></i>{{$item->address}}</div>
-                                                    <div class="Goodup-middle-caption mt-3">
-                                                        <p>{!! Str::limit($item->description, 50) !!}</p>
-                                                    </div>
-                                                </div>
-                                                <div class="Goodup-grid-footer py-2 px-3">
-                                                    <div class="Goodup-ft-last">
-                                                        <div class="Goodup-inline">
-                                                            <div class="Goodup-bookmark-btn"><a href="mailto:{{$item->email}}"><i
-                                                                        class="lni lni-envelope position-absolute"></i></a></div>
-                                                            <div class="Goodup-bookmark-btn"><a href="tel:{{$item->phone}}" ><i
-                                                                        class="lni lni-phone position-absolute"></i></a></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-    
-    
-                            </div>
-                        </div>
-                        <!-- /Places -->
-    
-                    </div>
-                </div>
-                
-                <!--<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">-->
-                <!--    <a class="Goodup-price-btn " href="#">View All Listings</a>-->
-                <!--</div>-->
-    
-            </div>
-            <!-- /row -->
-    
-        </div>
-    </section>
-    @endif
-    <!-- ======================= All Types Listing ======================== -->
-
-<!-- ======================= Listing Categories ======================== -->
-    @if($bcat->count() >= 1)
-    <section class="space min gray">
-        <div class="container">
-    
-            <div class="row justify-content-center">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                    <div class="sec_title position-relative text-center mb-5">
-                        <h6 class="mb-0 theme-cl">Popular Categories</h6>
-                        <h2 class="ft-bold">Browse Top Categories</h2>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- row -->
-            <div class="row align-items-center">
-                @foreach ($bcat as $item)
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cats-wrap text-center">
-                        <a href="{{route('singcat')}}/{{$item->slug}}" class="Goodup-catg-wrap">
-                            <div class="Goodup-catg-city">{{$item->businesses_count}} Listings</div>
-                            <div class="Goodup-catg-icon"><i class="{{$item->icon}}"></i></div>
-                            <div class="Goodup-catg-caption">
-                                <h4 class="fs-md mb-0 ft-medium m-catrio">{{$item->name}}</h4>
-                                {{-- <span class="text-muted">607 Listings</span> --}}
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                @endforeach
-    
-    
-    
-            </div>
-            <!-- row -->
-    
-        </div>
-    </section>
-    @endif
-<!-- ======================= Listing Categories End ======================== -->
-
-<!-- ======================= About Start ============================ -->
-<section class="space" id="mission">
-    <div class="container">
-
-        <div class="row align-items-center justify-content-between">
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                <div class="m-spaced">
-                    <div class="position-relative">
-                        <div class="mb-2"><span class="bg-light-sky text-sky px-2 py-1 rounded">Our Mission</span></div>
-                        <h2 class="ft-bold mb-3">Claim Your Business & <br>Get Started Today!</h2>
-                        <p class="mb-2">At Local Beings, our mission is to empower local communities by connecting people with the best local businesses and services in their area. We believe in the power of supporting and celebrating local businesses, and our platform serves as a bridge between customers seeking exceptional experiences and businesses striving to make a positive impact. Through our user-friendly interface and comprehensive directory, we aim to provide a trusted resource that helps individuals discover, review, and engage with a diverse range of local establishments. By fostering a vibrant ecosystem of local beings, we aspire to strengthen communities, promote economic growth, and enhance the overall quality of life for everyone involved. Join us in our mission to support local businesses, build connections, and embrace the unique essence of each community we serve.</p>
-                    </div>
-                    <div class="position-relative row">
-                        <!--<div class="col-lg-4 col-md-4 col-4">-->
-                        <!--    <h3 class="ft-bold text-sky mb-0"><span class="count">07</span>+</h3>-->
-                        <!--    <p class="ft-medium">Business Listing</p>-->
-                        <!--</div>-->
-                        <!--<div class="col-lg-4 col-md-4 col-4">-->
-                        <!--    <h3 class="ft-bold text-warning mb-0"><span class="count">06</span>k+</h3>-->
-                        <!--    <p class="ft-medium">Popular Authors</p>-->
-                        <!--</div>-->
-                        <!--<div class="col-lg-4 col-md-4 col-4">-->
-                        <!--    <h3 class="ft-bold text-danger mb-0"><span class="count">200</span>+</h3>-->
-                        <!--    <p class="ft-medium">Countries</p>-->
-                        <!--</div>-->
-                        <div class="col-lg-12 col-md-12 col-12 mt-3" id="process">
-                            <a href="{{route('about')}}" class="btn btn-md theme-bg-light rounded theme-cl hover-theme">See Details<i class="lni lni-arrow-right-circle ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
-                <div class="position-relative">
-                    <img src="{{asset('asset/img/bn-5.webp')}}" class="img-fluid" alt="" style="width: 530px; height: 580px;" />
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-<!-- ======================= About Start ============================ -->
-
-<!-- ======================= About Start ============================ -->
-<section class="space pt-0" >
-    <div class="container">
-
-        <div class="row align-items-center justify-content-between rev-col">
-
-            <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
-                <div class="position-relative">
-                    <img src="{{asset('asset/img/bn-4.webp')}}" class="img-fluid" alt=""  style="width: 530px; height: 580px;" />
-                </div>
-            </div>
-
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                <div class="m-spaced">
-                    <div class="position-relative">
-                        <div class="mb-1"><span class="bg-light-success text-success px-2 py-1 rounded">Process</span></div>
-                        <h2 class="ft-bold mb-3">How it works & features</h2>
-                        <p class="mb-3">Discover, Review, and Engage with the best local businesses in your community.</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                             <div class="uli-list-features">
-                        <ul>
-
-                            <li>
-                                <div class="list-uiyt">
-                                    <div class="list-iobk"><i class="fas fa-globe"></i></div>
-                                    <div class="list-uiyt-capt">
-                                        <h5>Find Businesses</h5>
-                                        <p>Discover a wide range of local establishments effortlessly with our intuitive search functionality.</p>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="list-uiyt">
-                                    <div class="list-iobk"><i class="fas fa-envelope"></i></div>
-                                    <div class="list-uiyt-capt">
-                                        <h5>Review Listings</h5>
-                                        <p>Share your experiences and help others make informed decisions by leaving honest reviews, ratings, and recommendations.</p>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="list-uiyt">
-                                    <div class="list-iobk"><i class="fas fa-phone"></i></div>
-                                    <div class="list-uiyt-capt">
-                                        <h5>Make a Reservation</h5>
-                                        <p>Easily book appointments, tables, or services directly through our platform for a seamless experience.</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                        </div>
-                        <div class="col-sm-6">
-                             <div class="uli-list-features">
-                        <ul>
-
-                            <li>
-                                <div class="list-uiyt">
-                                    <div class="list-iobk"><i class="fas fa-map"></i></div>
-                                    <div class="list-uiyt-capt">
-                                        <h5>Interactive Map</h5>
-                                        <p>Explore your surroundings and navigate different neighborhoods with our visual map feature.</p>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="list-uiyt">
-                                    <div class="list-iobk"><i class="fa fa-bookmark"></i></div>
-                                    <div class="list-uiyt-capt">
-                                        <h5>Bookmark and Favorites</h5>
-                                        <p>Save and organize your favorite businesses for quick access whenever you need.</p>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="list-uiyt">
-                                    <div class="list-iobk"><i class="fa fa-users"></i></div>
-                                    <div class="list-uiyt-capt">
-                                        <h5>Community Engagement</h5>
-                                        <p>Connect with fellow users and business owners, share tips, and engage with like-minded individuals.</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                        </div>
-                    </div>
-                   
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-<!-- ======================= About Start ============================ -->
-
-<!-- ============================ Pricing Start ==================================== -->
-<!--<section class="space min gray">-->
-<!--    <div class="container">-->
-
-<!--        <div class="row justify-content-center">-->
-<!--            <div class="col-xl-5 col-lg-7 col-md-9 col-sm-12">-->
-<!--                <div class="sec_title position-relative text-center mb-5">-->
-<!--                    <h6 class="theme-cl mb-0">Our Pricing</h6>-->
-<!--                    <h2 class="ft-bold">Choose Your Package</h2>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--        <div class="row">-->
-
-<!--            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">-->
-<!--                <div class="Goodup-price-wrap">-->
-<!--                    <div class="Goodup-author-header">-->
-<!--                        <div class="Goodup-price-currency">-->
-<!--                            <h3><span class="Goodup-new-price">$<del>49</del></span><span class="Goodup-old-price">$<del>149</del></span></h3>-->
-<!--                        </div>-->
-<!--                        <div class="Goodup-price-title">-->
-<!--                            <div class="Goodup-price-tlt"><h4>Personal</h4></div><div class="Goodup-price-ribbon"><span class="Goodup-ribbon-offer all">50% Off</span></div>-->
-<!--                        </div>-->
-<!--                        <div class="Goodup-price-subtitle">Best Choice for Individuals </div>-->
-<!--                    </div>-->
-<!--                    <div class="Goodup-price-body">-->
-<!--                        <ul class="price__features">-->
-<!--                            <li><i class="fa fa-angle-right"></i>Lifetime Bandwidth Usage</li>-->
-<!--                            <li><i class="fa fa-angle-right"></i>6 Months Support &amp; Updates</li>-->
-<!--                            <li><i class="fa fa-angle-right"></i>10 Website License</li>-->
-<!--                            <li><i class="fa fa-angle-right"></i>Quickstart Included</li>-->
-<!--                            <li><i class="fa fa-angle-right"></i>Access to Plugins &amp; Theme</li>-->
-<!--                            <li><i class="fa fa-angle-right"></i>Branding/Copyright Removal</li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                    <div class="Goodup-price-bottom">-->
-<!--                        <a class="Goodup-price-btn" href="#"><i class="fas fa-shopping-basket"></i> Purchase Now</a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">-->
-<!--                <div class="Goodup-price-wrap">-->
-<!--                    <div class="Goodup-author-header">-->
-<!--                        <div class="Goodup-price-currency">-->
-<!--                            <h3><span class="Goodup-new-price theme-cl">$<del>129</del></span><span class="Goodup-old-price">$<del>199</del></span></h3>-->
-<!--                        </div>-->
-<!--                        <div class="Goodup-price-title">-->
-<!--                            <div class="Goodup-price-tlt"><h4>Platinum</h4></div><div class="Goodup-price-ribbon"><span class="Goodup-ribbon-offer">50% Off</span></div>-->
-<!--                        </div>-->
-<!--                        <div class="Goodup-price-subtitle">Best Choice for Individuals </div>-->
-<!--                    </div>-->
-<!--                    <div class="Goodup-price-body">-->
-<!--                        <ul class="price__features">-->
-<!--                            <li><i class="fa fa-angle-right"></i>Lifetime Bandwidth Usage</li>-->
-<!--                            <li><i class="fa fa-angle-right"></i>12 Months Support &amp; Updates</li>-->
-<!--                            <li><i class="fa fa-angle-right"></i>20 Website License</li>-->
-<!--                            <li><i class="fa fa-angle-right"></i>Quickstart Included</li>-->
-<!--                            <li><i class="fa fa-angle-right"></i>Access to Plugins &amp; Theme</li>-->
-<!--                            <li><i class="fa fa-angle-right"></i>Branding/Copyright Removal</li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                    <div class="Goodup-price-bottom">-->
-<!--                        <a class="Goodup-price-btn active" href="#"><i class="fas fa-shopping-basket"></i> Purchase Now</a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">-->
-<!--                <div class="Goodup-price-wrap">-->
-<!--                    <div class="Goodup-author-header">-->
-<!--                        <div class="Goodup-price-currency">-->
-<!--                            <h3><span class="Goodup-new-price">$<del>149</del></span><span class="Goodup-old-price">$<del>249</del></span></h3>-->
-<!--                        </div>-->
-<!--                        <div class="Goodup-price-title">-->
-<!--                            <div class="Goodup-price-tlt"><h4>Standard</h4></div><div class="Goodup-price-ribbon"><span class="Goodup-ribbon-offer all">50% Off</span></div>-->
-<!--                        </div>-->
-<!--                        <div class="Goodup-price-subtitle">Best Choice for Individuals </div>-->
-<!--                    </div>-->
-<!--                    <div class="Goodup-price-body">-->
-<!--                        <ul class="price__features">-->
-<!--                            <li><i class="fa fa-angle-right"></i>Lifetime Bandwidth Usage</li>-->
-<!--                            <li><i class="fa fa-angle-right"></i>Lifetime Support &amp; Updates</li>-->
-<!--                            <li><i class="fa fa-angle-right"></i>50 Website License</li>-->
-<!--                            <li><i class="fa fa-angle-right"></i>Quickstart Included</li>-->
-<!--                            <li><i class="fa fa-angle-right"></i>Access to Plugins &amp; Theme</li>-->
-<!--                            <li><i class="fa fa-angle-right"></i>Branding/Copyright Removal</li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                    <div class="Goodup-price-bottom">-->
-<!--                        <a class="Goodup-price-btn" href="#"><i class="fas fa-shopping-basket"></i> Purchase Now</a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--        </div>-->
-
-<!--    </div>-->
-<!--</section>-->
-<!-- ============================ Pricing End ==================================== -->
-
-
-<!-- ======================= Newsletter Start ============================ -->
-<section class="space bg-cover" style="background:#03343b url(assets/img/landing-bg.png) no-repeat;">
-    <div class="container py-5">
-
-        <div class="row justify-content-center">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                <div class="sec_title position-relative text-center mb-5">
-                    <h6 class="text-light mb-0">Subscribe Now</h6>
-                    <h2 class="ft-bold text-light">Get All Updates & Advance Offers</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="row align-items-center justify-content-center">
-            <div class="col-xl-7 col-lg-10 col-md-12 col-sm-12 col-12">
-                <form class="bg-white rounded p-1">
-                    <div class="row no-gutters">
-                        <div class="col-xl-9 col-lg-9 col-md-8 col-sm-8 col-8">
-                            <div class="form-group mb-0 position-relative">
-                                <input type="text" class="form-control b-0" placeholder="Enter Your Email Address">
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-4">
-                            <div class="form-group mb-0 position-relative">
-                                <button class="btn full-width btn-height theme-bg text-light fs-md" type="button">Subscribe</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-    </div>
-</section>
-<!-- ======================= Newsletter Start ============================ -->
 
 
 @endsection

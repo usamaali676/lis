@@ -1,13 +1,24 @@
-        <script src="{{asset('/asset/js/jquery.min.js')}}"></script>
-		<script async  src="{{asset('/asset/js/popper.min.js')}}"></script>
-		<script src="{{asset('/asset/js/bootstrap.min.js')}}"></script>
-		<script async  src="{{asset('/asset/js/slick.js')}}"></script>
-		<script async  src="{{asset('/asset/js/jquery.magnific-popup.min.js')}}"></script>
-		<!--<script src="{{asset('/asset/js/dropzone.js')}}"></script>-->
-		<script async  src="{{asset('/asset/js/counterup.js')}}"></script>
-		<script async  src="{{asset('/asset/js/lightbox.js')}}"></script>
-		<script async  src="{{asset('/asset/js/moment.min.js')}}"></script>
-		<!--<script async  src="{{asset('/asset/js/daterangepicker.js')}}"></script>-->
-		<!--<script async  src="{{asset('/asset/js/lightbox.js')}}"></script>-->
-		<script async src="{{asset('/asset/js/jQuery.style.switcher.js')}}"></script>
-		<script async  src="{{asset('/asset/js/custom.js')}}"></script>
+<!-- Scripts -->
+<script src="{{ asset('assetes/scripts/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('assetes/scripts/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('assetes/scripts/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('assetes/scripts/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('assetes/scripts/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('assetes/scripts/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('assetes/scripts/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('assetes/scripts/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('assetes/scripts/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('assetes/scripts/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('assetes/scripts/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('assetes/scripts/jquery-3.6.0.min.js') }}"></script>
+<script>
+    var typed = new Typed('.typed-words', {
+        strings: ["Attractions", " Restaurants", " Hotels"],
+        typeSpeed: 80,
+        backSpeed: 80,
+        backDelay: 4000,
+        startDelay: 1000,
+        loop: true,
+        showCursor: true
+    });
+</script>

@@ -1,45 +1,47 @@
 <!DOCTYPE html>
-<head>
-
-@include('layouts.partials.head')
-@yield('css')
+<html lang="zxx">
+    <head>
+@include('layouts.partials.headFront')
 </head>
+<body class="header-one">
 
-<body>
+    <!-- Preloader Start -->
+    <div class="preloader">
+        <div class="utf-preloader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- Preloader End -->
 
-<!-- Wrapper -->
-<div id="wrapper">
+    <!-- Wrapper -->
+    <div id="main_wrapper">
+        @include('layouts.partials.nav')
+        <div class="clearfix"></div>
 
-<!-- Header Container
-================================================== -->
-@include('layouts.partials.dasboard_nav')
+        @yield('content')
 
-<div class="clearfix"></div>
-<!-- Header Container / End -->
+        <!-- Footer -->
+        @include('layouts.partials.footer')
+        <div id="bottom_backto_top"><a href="#"></a></div>
+    </div>
 
-
-<!-- Dashboard -->
-<div id="dashboard">
-
-@include('layouts.partials.sidebar')
-
-<div class="dashboard-content">
-@yield('content')
-</div>
-
-</div>
-<!-- Dashboard / End -->
-
-
-</div>
-<!-- Wrapper / End -->
-
-
-<!-- Scripts
-================================================== -->
-
- @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
-@include('layouts.partials.scripts')
-@yield('js')
+    @include('layouts.partials.front-scripts')
+    <!-- Style Switcher -->
+    <div id="color_switcher_preview">
+        <h2>Choose Your Color <a href="#"><i class="fa fa-cog fa-spin (alias)"></i></a></h2>
+        <div>
+            <ul class="colors" id="color1">
+                <li><a href="#" class="stylesheet"></a></li>
+                <li><a href="#" class="stylesheet_1"></a></li>
+                <li><a href="#" class="stylesheet_2"></a></li>
+                <li><a href="#" class="stylesheet_3"></a></li>
+                <li><a href="#" class="stylesheet_4"></a></li>
+                <li><a href="#" class="stylesheet_5"></a></li>
+            </ul>
+        </div>
+    </div>
 </body>
+
 </html>
